@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo
-        image: hoonjd/web-app:2.0
+        image: hoonjd/web-app:1.0
         ports:
         - name: http
           containerPort: 8000
