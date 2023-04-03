@@ -31,7 +31,7 @@ spec:
       trafficRouting:
         istio:
           virtualService:
-            name: canary-demo-vsvc
+            name: canary-demo-host-vsvc
             routes:
             - primary
       steps:
