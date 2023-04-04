@@ -36,6 +36,8 @@ spec:
             name: rollout-destrule    # required
             canarySubsetName: canary  # required
             stableSubsetName: stable  # required
+      maxSurge: 25%
+      maxUnavailable: 25%
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
