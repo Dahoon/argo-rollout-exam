@@ -26,6 +26,7 @@ spec:
             cpu: 5m
   strategy:
     canary:
+      maxSurge: 25%
       canaryService: canary-demo-canary
       stableService: canary-demo-stable
       trafficRouting:
