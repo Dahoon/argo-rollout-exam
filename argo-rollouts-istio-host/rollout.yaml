@@ -27,6 +27,7 @@ spec:
   strategy:
     canary:
       maxSurge: 25%
+      maxUnavailable: 25%
       canaryService: canary-demo-canary
       stableService: canary-demo-stable
       trafficRouting:
