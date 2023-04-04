@@ -51,7 +51,7 @@ spec:
     stepWeight: 10
     webhooks:
       - name: "ask for confirmation"
-        type: confirm-rollout
+        type: confirm-promotion
         url: http://flagger-loadtester.test/gate/check
       - name: "post-rollout"
         type: post-rollout
