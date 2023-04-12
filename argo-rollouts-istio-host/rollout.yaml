@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: hoonjd/web-app:1.0
+        image: hoonjd/web-app:2.0
         ports:
         - name: http
           containerPort: 8000
@@ -34,7 +34,7 @@ spec:
 #             name: canary-demo-host-vsvc
 #             routes:
 #             - primary
-      maxSurge: 10%
+      maxSurge: 1
 #       maxUnavailable: 50%
 #       scaleDownDelaySeconds: 1
       steps:
