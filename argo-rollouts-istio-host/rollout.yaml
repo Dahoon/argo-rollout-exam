@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-demo-host
 spec:
-  replicas: 10
+  replicas: 20
   revisionHistoryLimit: 5
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: nginx:1.21.4
+        image: nginx:1.21.5
         ports:
         - name: http
           containerPort: 8000
@@ -41,9 +41,9 @@ spec:
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
-      - setWeight: 20
-      - pause: {duration: 10}
-      - setWeight: 30
-      - pause: {duration: 10}
+#       - setWeight: 20
+#       - pause: {duration: 10}
+#       - setWeight: 30
+#       - pause: {duration: 10}
       - setWeight: 80
       - pause: {duration: 10}
