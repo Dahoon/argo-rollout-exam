@@ -38,15 +38,15 @@ spec:
             name: canary-demo-host-vsvc
             routes:
             - primary
-      maxSurge: 2
+      maxSurge: "20%"
       maxUnavailable: 1
       scaleDownDelaySeconds: 1
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
-      - setWeight: 40
-      - pause: {duration: 10}
-      - setWeight: 60
-      - pause: {duration: 10}
-      - setWeight: 80
-      - pause: {duration: 10}
+#       - setWeight: 40
+#       - pause: {duration: 10}
+#       - setWeight: 60
+#       - pause: {duration: 10}
+#       - setWeight: 80
+#       - pause: {duration: 10}
