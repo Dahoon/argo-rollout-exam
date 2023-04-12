@@ -4,7 +4,7 @@ metadata:
   name: canary-demo-host
 spec:
   replicas: 10
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: canary-demo-host
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         ports:
         - name: http
           containerPort: 8000
