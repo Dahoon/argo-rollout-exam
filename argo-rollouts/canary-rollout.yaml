@@ -28,7 +28,7 @@ spec:
   strategy:
     canary:
       canaryService: canary-demo-preview
-      maxSurge: 10%
+      maxSurge: 50%
       steps:
       - setWeight: 20
       - pause: {}
