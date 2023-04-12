@@ -4,10 +4,10 @@ metadata:
   name: canary-demo-host
 spec:
   replicas: 10
-#   strategy:
-#     type: RollingUpdate
-#     rollingUpdate:
-#       maxSurge: 25%
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         ports:
         - name: http
           containerPort: 8000
@@ -30,21 +30,21 @@ spec:
             cpu: 5m
   strategy:
     canary:
-#       canaryService: canary-demo-canary
-#       stableService: canary-demo-stable
-#       trafficRouting:
-#         istio:
-#           virtualService:
-#             name: canary-demo-host-vsvc
-#             routes:
-#             - primary
+      canaryService: canary-demo-canary
+      stableService: canary-demo-stable
+      trafficRouting:
+        istio:
+          virtualService:
+            name: canary-demo-host-vsvc
+            routes:
+            - primary
       maxSurge: 25%
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
-#       - setWeight: 40
-#       - pause: {duration: 10}
-#       - setWeight: 60
-#       - pause: {duration: 10}
-#       - setWeight: 80
-#       - pause: {duration: 10}
+      - setWeight: 40
+      - pause: {duration: 10}
+      - setWeight: 60
+      - pause: {duration: 10}
+      - setWeight: 80
+      - pause: {duration: 10}
