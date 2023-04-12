@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         imagePullPolicy: Always
         ports:
         - name: http
@@ -32,9 +32,9 @@ spec:
       steps:
       - setWeight: 10
       - pause: {}
-#       - setWeight: 40
-#       - pause: {duration: 10}
-#       - setWeight: 60
-#       - pause: {duration: 10}
-#       - setWeight: 80
-#       - pause: {duration: 10}
+      - setWeight: 40
+      - pause: {duration: 40}
+      - setWeight: 60
+      - pause: {duration: 40}
+      - setWeight: 80
+      - pause: {duration: 40}
