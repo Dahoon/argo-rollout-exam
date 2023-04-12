@@ -4,10 +4,10 @@ metadata:
   name: canary-demo-host
 spec:
   replicas: 10
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
+#   strategy:
+#     type: RollingUpdate
+#     rollingUpdate:
+#       maxSurge: 25%
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: hoonjd/web-app:1.0
+        image: hoonjd/web-app:2.0
         ports:
         - name: http
           containerPort: 8000
@@ -38,7 +38,7 @@ spec:
             name: canary-demo-host-vsvc
             routes:
             - primary
-      maxSurge: 25%
+      maxSurge: 2
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
