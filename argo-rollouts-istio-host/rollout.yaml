@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         ports:
         - name: http
           containerPort: 8000
@@ -38,8 +38,9 @@ spec:
             name: canary-demo-host-vsvc
             routes:
             - primary
-      maxSurge: 10%
-      abortScaleDownDelaySeconds: 1
+      maxSurge: 2
+      maxUnavailable: 1
+      scaleDownDelaySeconds: 1
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
