@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         imagePullPolicy: Always
         ports:
         - name: http
@@ -28,9 +28,9 @@ spec:
   strategy:
     canary:
       canaryService: canary-demo-preview
-      maxSurge: 50%
+#       maxSurge: 50%
       steps:
-      - setWeight: 20
+      - setWeight: 10
       - pause: {}
 #       - setWeight: 40
 #       - pause: {duration: 10}
