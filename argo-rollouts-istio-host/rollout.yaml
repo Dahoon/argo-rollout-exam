@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-demo-host
 spec:
-  replicas: 5
+  replicas: 10
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -39,9 +39,9 @@ spec:
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
-      - setWeight: 40
-      - pause: {duration: 10}
-      - setWeight: 60
-      - pause: {duration: 10}
-      - setWeight: 80
-      - pause: {duration: 10}
+#       - setWeight: 40
+#       - pause: {duration: 10}
+#       - setWeight: 60
+#       - pause: {duration: 10}
+#       - setWeight: 80
+#       - pause: {duration: 10}
