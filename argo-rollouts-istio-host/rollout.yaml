@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: hoonjd/web-app:1.0
+        image: nginx:1.21.5
         ports:
         - name: http
           containerPort: 8000
@@ -26,17 +26,17 @@ spec:
             cpu: 5m
   strategy:
     canary:
-      canaryService: canary-demo-canary
-      stableService: canary-demo-stable
-      trafficRouting:
-        istio:
-          virtualService:
-            name: canary-demo-host-vsvc
-            routes:
-            - primary
+#       canaryService: canary-demo-canary
+#       stableService: canary-demo-stable
+#       trafficRouting:
+#         istio:
+#           virtualService:
+#             name: canary-demo-host-vsvc
+#             routes:
+#             - primary
       maxSurge: 1
       maxUnavailable: 50%
-      scaleDownDelaySeconds: 1
+#       scaleDownDelaySeconds: 1
       steps:
       - setWeight: 10
       - pause: {}         # pause indefinitely
