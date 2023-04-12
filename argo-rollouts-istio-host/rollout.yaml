@@ -36,7 +36,7 @@ spec:
             routes:
             - primary
       maxSurge: 10%
-#       maxUnavailable: 50%
+      maxUnavailable: 0
 #       scaleDownDelaySeconds: 1
       steps:
       - setWeight: 10
