@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: canary-demo-host
-        image: nginx:1.21.5
+        image: nginx:1.21.4
         ports:
         - name: http
           containerPort: 8000
@@ -40,7 +40,7 @@ spec:
             - primary
       maxSurge: "20%"
       maxUnavailable: 50%
-      scaleDownDelaySeconds: 1
+      scaleDownDelaySeconds: 0
       steps:
       - setCanaryScale:
           weight: 25
