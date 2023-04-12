@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-demo
 spec:
-  replicas: 5
+  replicas: 10
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -28,6 +28,7 @@ spec:
   strategy:
     canary:
       canaryService: canary-demo-preview
+      maxSurge: 10%
       steps:
       - setWeight: 20
       - pause: {}
