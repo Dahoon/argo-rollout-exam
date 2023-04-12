@@ -9,11 +9,11 @@ spec:
   - "*"
   http:
   - name: primary
-    match:
-      - uri:
-          exact: "/istio-argo-host"
-    rewrite:
-      uri: "/"
+#     match:
+#       - uri:
+#           exact: "/istio-argo-host"
+#     rewrite:
+#       uri: "/"
     route:
     - destination:
         host: canary-demo-stable
