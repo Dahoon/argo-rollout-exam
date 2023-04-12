@@ -26,14 +26,14 @@ spec:
             cpu: 5m
   strategy:
     canary:
-#       canaryService: canary-demo-canary
-#       stableService: canary-demo-stable
-#       trafficRouting:
-#         istio:
-#           virtualService:
-#             name: canary-demo-host-vsvc
-#             routes:
-#             - primary
+      canaryService: canary-demo-canary
+      stableService: canary-demo-stable
+      trafficRouting:
+        istio:
+          virtualService:
+            name: canary-demo-host-vsvc
+            routes:
+            - primary
       maxSurge: 10%
 #       maxUnavailable: 50%
 #       scaleDownDelaySeconds: 1
