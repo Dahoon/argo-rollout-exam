@@ -4,7 +4,7 @@ metadata:
   name: canary-demo-host
 spec:
   replicas: 10
-   strategy:
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
